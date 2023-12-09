@@ -17,12 +17,17 @@ import java.util.List;
 public class Product  {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "prodid")
     private Long prodID;
-
+    @Column(name = "prod_name")
     private String prodName;
+    @Column(name = "description")
     private String description;
+    @Column(name = "date_of_manf")
     private LocalDate dateOfManf;
+    @Column(name = "price")
     private BigDecimal price;
+
     @OneToMany(mappedBy = "product")
     private List<Sale> sales;
 

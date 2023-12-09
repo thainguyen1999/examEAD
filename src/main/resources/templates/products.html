@@ -3,6 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <title>Product Details</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        /* Thiết lập kiểu dáng cho các ô tiêu đề */
+        th {
+            background-color: #f2f2f2;
+            color: #333;
+            font-weight: bold;
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        /* Thiết lập kiểu dáng cho các ô dữ liệu */
+        td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        /* Tô màu xen kẽ cho các hàng */
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        /* Hover effect khi di chuột vào hàng */
+        tr:hover {
+            background-color: #e0e0e0;
+        }
+    </style>
 </head>
 <body>
 <h2>Product Details</h2>
@@ -18,7 +51,7 @@
         <td th:text="${product.prodID}"></td>
         <td th:text="${product.prodName}"></td>
         <td th:text="${product.description}"></td>
-        <td th:text="${#dates.format(product.dateOfManf, 'yyyy-MM-dd')}"></td>
+        <td th:text="${product.dateOfManf}"></td>
         <td th:text="${product.price}"></td>
     </tr>
 </table>
