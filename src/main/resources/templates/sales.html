@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Sales Details</title>
+</head>
+<body>
+<h2>Sales Details</h2>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Salesman ID</th>
+        <th>Product ID</th>
+        <th>Salesman Name</th>
+        <th>Date of Sale</th>
+    </tr>
+    <tr th:each="sale : ${sales}">
+        <td th:text="${sale.slNo}"></td>
+        <td th:text="${sale.salesmanID}"></td>
+        <td th:text="${sale.prodID}"></td>
+        <td th:text="${sale.salesmanName}"></td>
+        <td th:text="${#dates.format(sale.DOS, 'yyyy-MM-dd')}"></td>
+    </tr>
+</table>
+</body>
+</html>
